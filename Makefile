@@ -13,5 +13,10 @@ convert: convert.c bapl.h
 	export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 	$(CC) $(CFLAGS) convert.c -o convert `pkg-config --cflags --libs MagickWand` 
 
+viewer: viewer.c bapl.h
+	export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+	clang -o viewer viewer.c -lSDL2 $(pkg-config --cflags --libs sdl2)
+
 clean:
 	rm -f inspector convert
+

@@ -56,7 +56,7 @@ void displayBAPL(const char *filename) {
 
     // Add BAPL header info to window title
     char title[100];
-    snprintf(title, sizeof(title), "%s - Width: %d Height: %d Frame Rate: %d", SCREEN_TITLE, header.width, header.height, header.frame_rate);
+    snprintf(title, sizeof(title), "%s - %d x %d %d fps", SCREEN_TITLE, header.width, header.height, header.frame_rate);
     SDL_SetWindowTitle(window, title);
 
     // Create SDL renderer
